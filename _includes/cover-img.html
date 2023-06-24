@@ -1,0 +1,8 @@
+{% assign prefix = 'assets/img/' %} {% assign date = include.src.date | date:
+'%Y/%m/' %} {% assign slug = include.src.slug | append: '-' | append:
+include.img %}
+<img
+  src="{{ prefix | append: date | append: slug | relative_url }}"
+  alt="{{ include.alt | default: 'Post thumbnail' }}"
+/>
+<!--post.year and post.month don't work-->

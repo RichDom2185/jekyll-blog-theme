@@ -2,12 +2,53 @@
 layout: default
 ---
 
-<!-- page.date | date: "%A, %-d %B %Y"
-<article> content </article> -->
-
 <div class="page-section post">
+  {% if page.cover-img %}
+  <div class="post-header">
+    {% include cover-img.html img=page.cover-img src=page %}
+  </div>
+  {% endif %}
   <h1>{{ page.title }}</h1>
   <span>{{ page.date | date: "%A, %-d %B %Y" }}</span>
+  <div>
+    <ul class="post-author">
+      {% for author in page.authors %}
+      <li>👤 {{ author }}</li>
+      {% endfor %}
+    </ul>
+  </div>
   <hr />
   <article>{{ content }}</article>
 </div>
+{% if page.cover-img %}
+<style>
+  .post-header {
+    margin-top: 1em;
+    background-image: url("{{ site.baseurl }}/assets/img/{{ page.date | date: '%Y/%m/' }}{{ page.slug | append: '-' | append: page.cover-img }}");
+    background-size: cover;
+    border-radius: 0.3em;
+  }
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document
+      .querySelectorAll("article h1, article h2, article h3")
+      .forEach(function (element) {
+        element.addEventListener("click", function () {
+          const destination = document.getElementById(
+            "markdown-toc-" + element.id
+          );
+          if (destination) {
+            destination.scrollIntoView();
+            destination.style.backgroundColor = "rgba(255, 255, 0, 0.5)";
+            setTimeout(() => {
+              // might want to replace with CSS animation instead
+              destination.style.backgroundColor = "";
+            }, 500);
+            // destination.scrollIntoView({ behavior: "smooth" });
+          }
+        });
+      });
+  });
+</script>
+{% endif %}
