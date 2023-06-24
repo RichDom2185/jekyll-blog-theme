@@ -1,0 +1,21 @@
+<!-- Tailwind Play CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    corePlugins: {
+      preflight: false,
+    },
+    theme: {
+      extend: {},
+    },
+  };
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    {{ site.data.tailwind | jsonify }}.forEach(({ selector, classes }) => {
+      document.querySelectorAll(`#root ${selector}`).forEach((element) => {
+        element.classList.add(...classes);
+      });
+    });
+  });
+</script>

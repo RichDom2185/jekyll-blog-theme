@@ -7,9 +7,10 @@
     <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
     {% include fonts.html %}
     {% include css.html %}
+    {% include tailwind.html %}
   </head>
   <body>
-    <div class="page-content">
+    <div id="root">
       {% include header.html %}
       {{ content }}
     </div>
