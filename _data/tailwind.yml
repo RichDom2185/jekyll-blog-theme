@@ -45,8 +45,7 @@
     - bg-gray-100
     - dark:bg-gray-800
     - border
-    - border-gray-300
-    - dark:border-gray-700
+    - BORDER_DYNAMIC_COLOR
 
 # Blog styles
 - selector: article *
@@ -96,7 +95,7 @@
     - mx-auto
     - shadow-lg
     - border
-    - border-gray-200
+    - BORDER_DYNAMIC_COLOR
     - min-w-[30%]
     - max-h-[60vh]
     - object-contain
@@ -116,6 +115,10 @@
   classes:
     - tracking-normal
     - dark:tracking-wide
+- selector: .BORDER_DYNAMIC_COLOR
+  classes:
+    - border-gray-300
+    - dark:border-gray-700
 
 # The following are adapted from
 # https://github.com/RichDom2185/2023-website/blob/master/src/utils/styles.ts
