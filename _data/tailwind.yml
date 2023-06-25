@@ -35,6 +35,19 @@
     - pt-[--header-height]
     - -mt-[--header-height]
 
+# Global styles
+- selector: :not(pre) > code
+  classes:
+    - rounded
+    - px-1
+    - py-0.5
+    - font-mono
+    - bg-gray-100
+    - dark:bg-gray-800
+    - border
+    - border-gray-300
+    - dark:border-gray-700
+
 # Blog styles
 - selector: article *
   classes:
@@ -60,10 +73,33 @@
     - hover:underline
     - underline-offset-8
     - decoration-dashed
+- selector: |
+    article h4,
+    article h5,
+    article h6
+  classes:
+    - TEXT_BOLD
 - selector: article h1
   classes:
     - text-xl
     - lg:text-2xl
+- selector: article h2
+  classes:
+    - text-lg
+    - lg:text-xl
+- selector: article h3
+  classes:
+    - text-lg
+- selector: article img
+  classes:
+    - rounded
+    - mx-auto
+    - shadow-lg
+    - border
+    - border-gray-200
+    - min-w-[30%]
+    - max-h-[60vh]
+    - object-contain
 
 # TODO: Investigate if needs changing
 - selector: article ol li
