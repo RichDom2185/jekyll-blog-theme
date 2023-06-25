@@ -32,6 +32,9 @@
 - selector: .site-header + *
   classes:
     - -mt[--header-height]
+- selector: article p
+  classes:
+    - font-serif
 
 # The following are copied from
 # https://github.com/RichDom2185/2023-website/blob/master/src/utils/styles.ts
