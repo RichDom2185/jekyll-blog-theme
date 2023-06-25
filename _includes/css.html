@@ -5,8 +5,6 @@
   :root {
     --animation-duration: 0.1s;
     --header-height: 2rem;
-    --sidebar-background-color: #f5f5f5;
-    --sidebar-inactive-color: #363636;
 
     --white: #fff;
     --light-background-color: #fafafa;
@@ -91,17 +89,6 @@
     font-family: var(--font-mono);
   }
 
-  .sidebar-target {
-    color: transparent;
-    text-shadow: 0 0 0 var(--sidebar-inactive-color);
-    transition: color var(--animation-duration) linear;
-  }
-
-  .sidebar-target-active,
-  .sidebar-target:hover {
-    color: inherit;
-  }
-
   .page-section {
     display: flow-root;
   }
@@ -109,16 +96,6 @@
   .page-section:first-of-type {
     /* offset = header height + header padding + header shadow */
     margin-top: calc(var(--header-height) * -1 - 1em - 2px);
-  }
-
-  .page-section > p {
-    font-size: 1.1rem;
-    font-family: var(--font-serif);
-    font-style: italic;
-    max-width: var(--screen-width-md);
-    margin: 2em auto;
-    line-height: 1.7;
-    text-align: center;
   }
 
   .page-section > h1 {
