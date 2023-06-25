@@ -17,3 +17,10 @@
 .shadow {
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+// From https://css-tricks.com/a-complete-guide-to-dark-mode-on-the-web/
+@media (prefers-color-scheme: dark) {
+  img {
+    filter: brightness(0.85) contrast(1.1);
+  }
+}

@@ -70,7 +70,7 @@
     - tracking-normal
     - dark:tracking-wide
 
-# The following are copied from
+# The following are adapted from
 # https://github.com/RichDom2185/2023-website/blob/master/src/utils/styles.ts
 - selector: .BACKGROUND_DYNAMIC_COLOR
   classes:
@@ -79,7 +79,7 @@
 - selector: .TEXT_DYNAMIC_COLOR
   classes:
     - text-zinc-900
-    - dark:text-stone-400
+    - dark:text-stone-300
 - selector: .TEXT_STATIC_BLACK
   classes:
     - text-zinc-900
