@@ -32,15 +32,39 @@
 - selector: .site-header + *
   classes:
     - -mt[--header-height]
-- selector: article p
+
+# Blog styles
+- selector: |
+    article h1,
+    article h2,
+    article h3,
+    article h4,
+    article h5,
+    article h6
   classes:
-    - font-serif
-    - text-justify
+    - font-sans
+    - text-left
+- selector: |
+    article h1,
+    article h2,
+    article h3
+  classes:
+    - relative
+    - cursor-pointer
+    - hover:underline
+    - underline-offset-8
+    - decoration-dashed
+- selector: article h1
+  classes:
+    - TEXT_MEDIUM
+    - text-xl
+    - lg:text-2xl
 
 - selector: .TEXT_DYNAMIC_SPACING
   classes:
     - tracking-normal
     - dark:tracking-wide
+
 # The following are copied from
 # https://github.com/RichDom2185/2023-website/blob/master/src/utils/styles.ts
 - selector: .BACKGROUND_DYNAMIC_COLOR
