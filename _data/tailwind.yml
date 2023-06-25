@@ -46,6 +46,9 @@
     - dark:bg-gray-800
     - border
     - BORDER_DYNAMIC_COLOR
+- selector: img.emoji
+  classes:
+    - inline
 
 # Blog styles
 - selector: article *
@@ -89,7 +92,7 @@
 - selector: article h3
   classes:
     - text-lg
-- selector: article img
+- selector: article img:not(.emoji)
   classes:
     - rounded
     - mx-auto
