@@ -50,6 +50,30 @@
   classes:
     - inline
 
+# Table styles copied from
+# https://github.com/RichDom2185/glam-mailer/blob/master/src/themes/default.yaml#L96-L115
+- selector: table
+  classes:
+    - table-auto
+    - w-full
+    - border-collapse
+    - rounded-md
+    - overflow-hidden
+- selector: thead
+  classes:
+    - bg-gray-100
+- selector: tbody > tr
+  classes:
+    - odd:bg-white
+    - even:bg-gray-50
+- selector: th,td
+  classes:
+    - border
+    - border-gray-200
+    - border-solid
+    - px-4
+    - py-2
+
 # Blog styles
 - selector: article *
   classes:
