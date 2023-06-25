@@ -57,7 +57,7 @@
     - border-dashed
     - BORDER_DYNAMIC_COLOR
 
-# Table styles copied from
+# Table styles adapted to be dynamic from
 # https://github.com/RichDom2185/glam-mailer/blob/master/src/themes/default.yaml#L96-L115
 - selector: table
   classes:
@@ -66,17 +66,21 @@
     - border-collapse
     - rounded-md
     - overflow-hidden
+    - font-sans
 - selector: thead
   classes:
     - bg-gray-100
+    - dark:bg-gray-800
 - selector: tbody > tr
   classes:
     - odd:bg-white
+    - dark:odd:bg-gray-800
     - even:bg-gray-50
+    - dark:even:bg-gray-900
 - selector: th,td
   classes:
     - border
-    - border-gray-200
+    - BORDER_DYNAMIC_COLOR
     - border-solid
     - px-4
     - py-2
@@ -126,6 +130,12 @@
 - selector: article h3
   classes:
     - text-lg
+- selector: article a
+  classes:
+    - hover:underline
+    - hover:decoration-dashed
+    - underline-offset-4
+    - LINK_DYNAMIC_NO_HOVER
 - selector: article img:not(.emoji)
   classes:
     - rounded
@@ -156,6 +166,14 @@
   classes:
     - border-gray-300
     - dark:border-gray-700
+- selector: .LINK_DYNAMIC_HOVER
+  classes:
+    - hover:text-blue-600
+    - dark:hover:text-blue-300
+- selector: .LINK_DYNAMIC_NO_HOVER
+  classes:
+    - text-blue-600
+    - dark:text-blue-300
 
 # The following are adapted from
 # https://github.com/RichDom2185/2023-website/blob/master/src/utils/styles.ts
