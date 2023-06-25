@@ -1,14 +1,18 @@
 <!-- taken from React component in main site -->
-<header class="header">
-  <div class="header-left">
-    <img class="favicon" src="/favicon.ico" alt="Favicon" />
-    <a href="/">
-      <h1>{{ site.author }}</h1>
+<header class="site-header">
+  <div>
+    <!-- TODO: <img class="favicon" src="/favicon.ico" alt="Favicon" /> -->
+    <a
+      href="{{ site.baseurl }}/"
+      class="site-root-link text-xl md:text-2xl hover:text-bold dark:text-stone-400 dark:hover:text-stone-300 select-none inline-block font-normal hover:font-black transition-[color,font-weight]"
+    >
+      {{ site.title }}
     </a>
   </div>
   <ul class="header-right">
     <li>
-      <a href="/blog">Blog</a>
+      <!-- TODO: Implement search -->
+      <a href="javascript:alert('Coming Soon!');">Search</a>
     </li>
   </ul>
 </header>

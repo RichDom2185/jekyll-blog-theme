@@ -1,3 +1,38 @@
+- selector: .site-header
+  classes:
+    - BACKGROUND_DYNAMIC_COLOR
+    - TEXT_DYNAMIC_COLOR
+
+    - bg-opacity-70
+    - dark:bg-opacity-50
+
+    - backdrop-blur
+
+    - sticky
+    - top-0
+    - w-full
+    - h-[--header-height]
+
+    - flex
+    - gap-x-6
+    - items-center
+
+    - py-4
+    - px-5
+    - text-sm
+    - font-display
+    - justify-between
+
+    - TEXT_MEDIUM
+- selector: .site-header > *
+  classes:
+    - flex
+    - gap-x-4
+    - items-center
+- selector: .site-header + *
+  classes:
+    - -mt[--header-height]
+
 # The following are copied from
 # https://github.com/RichDom2185/2023-website/blob/master/src/utils/styles.ts
 - selector: .BACKGROUND_DYNAMIC_COLOR
