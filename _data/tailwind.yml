@@ -35,6 +35,7 @@
 - selector: article p
   classes:
     - font-serif
+    - text-justify
 
 - selector: .TEXT_DYNAMIC_SPACING
   classes:
