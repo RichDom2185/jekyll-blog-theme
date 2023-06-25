@@ -10,10 +10,17 @@ layout: default
   {% endif %}
   <h1>{{ page.title }}</h1>
   <span>{{ page.date | date: "%A, %-d %B %Y" }}</span>
-  <div>
-    <ul class="post-author">
+  <div class="space-y-2">
+    <p>Author{% if page.authors.size > 1 %}s{% endif %}:</p>
+    <ul class="post-author flex gap-2 flex-wrap">
       {% for author in page.authors %}
-      <li>👤 {{ author }}</li>
+      <li class="bg-gray-200 px-2 py-0.5 rounded-lg">
+        <iconify-icon
+          icon="emojione:bust-in-silhouette"
+          inline="true"
+        ></iconify-icon>
+        {{ author }}
+      </li>
       {% endfor %}
     </ul>
   </div>
