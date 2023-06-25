@@ -3,3 +3,7 @@
 .sass-cache
 _site
 Gemfile.lock
+
+# Editor settings
+.vscode/
+.idea/
