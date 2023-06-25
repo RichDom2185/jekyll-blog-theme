@@ -1,4 +1,5 @@
 {% if site.enable_features.admonitions %}{% capture content %}{% include admonitions.liquid html=content %}{% endcapture %}{% endif %}
+{% if site.enable_features.fancy-tables %}{% capture content %}{% include fancy-tables.liquid html=content %}{% endcapture %}{% endif %}
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
   <head>
