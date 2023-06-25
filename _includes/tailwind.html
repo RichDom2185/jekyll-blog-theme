@@ -1,9 +1,17 @@
 <!-- Tailwind Play CDN -->
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
+  const { defaultTheme } = tailwind;
   tailwind.config = {
     theme: {
-      extend: {},
+      extend: {
+        fontFamily: {
+          display: ["Plus Jakarta Sans", ...defaultTheme.fontFamily.sans],
+          sans: ["Figtree", ...defaultTheme.fontFamily.sans],
+          serif: ["STIX Two Text", ...defaultTheme.fontFamily.serif],
+          mono: ["Spline Sans Mono", ...defaultTheme.fontFamily.mono],
+        },
+      },
     },
   };
 </script>
