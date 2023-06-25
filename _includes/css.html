@@ -87,57 +87,6 @@
     width: var(--screen-width-xl);
   }
 
-  .profile-section {
-    display: flex;
-    margin: auto;
-    max-width: var(--screen-width-xl);
-    min-height: min(100vh, var(--screen-width-xxl));
-  }
-
-  @media screen and (max-width: 992px) {
-    .profile-section {
-      flex-direction: column;
-    }
-  }
-
-  .profile-info,
-  .profile-avatar {
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    margin: 2em auto;
-    padding: 0 2em;
-    max-width: var(--screen-width-sm);
-    justify-content: center;
-    gap: 1em;
-  }
-
-  .profile-info {
-    align-items: start;
-  }
-
-  .profile-avatar {
-    align-items: center;
-  }
-
-  .profile-avatar > img {
-    /* align-self: center; */
-    max-width: 80%;
-  }
-
-  .showcase-container {
-    display: grid;
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-    grid-gap: 1rem;
-
-    width: fit-content;
-    max-width: var(--screen-width-xl);
-    margin: auto;
-  }
-
-  .showcase-element,
-  .education-element,
-  .contact-element,
   .posts-element {
     border: 2px solid var(--grey-outline);
     border-radius: 8px;
@@ -161,55 +110,26 @@
     cursor: pointer;
   }
 
-  .showcase-element h2,
-  .education-element h2,
-  .contact-element h2,
   .posts-element h2 {
     margin: 0 0 0.5em;
     font-size: 1.3em;
-  }
-
-  .contact-element h2 {
-    text-align: center;
   }
 
   .posts-element a {
     color: inherit;
   }
 
-  .education-container,
-  .contact-container,
   .posts-container {
     display: grid;
     grid-gap: 1rem;
-    margin: auto;
-  }
-
-  .education-container {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-
-    width: fit-content;
-    max-width: var(--screen-width-xl);
-  }
-
-  .contact-container {
-    grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
-
-    width: var(--screen-width-lg);
-    margin: auto;
   }
 
   .posts-container {
     grid-template-columns: minmax(0, 1fr);
-
-    max-width: var(--screen-width-lg);
-    margin: auto;
   }
 
   /* Ideally, set the negative margin only to .profile-section */
-  #posts,
   .post {
-    margin-top: 0 !important;
     /* offset = header height + header padding + header shadow */
     min-height: calc(100vh - var(--header-height) - 1em - 2px);
   }
