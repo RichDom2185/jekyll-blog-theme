@@ -1,0 +1,25 @@
+# The following are copied from
+# https://github.com/RichDom2185/2023-website/blob/master/src/utils/styles.ts
+- selector: .BACKGROUND_DYNAMIC_COLOR
+  classes:
+    - bg-white
+    - dark:bg-zinc-900
+- selector: .TEXT_DYNAMIC_COLOR
+  classes:
+    - text-zinc-900
+    - dark:text-stone-400
+- selector: .TEXT_STATIC_BLACK
+  classes:
+    - text-zinc-900
+- selector: .TEXT_BOLD
+  classes:
+    - font-bold
+    - dark:font-semibold
+- selector: .TEXT_NORMAL
+  classes:
+    - font-normal
+    - dark:font-light
+- selector: .TEXT_MEDIUM
+  classes:
+    - font-medium
+    - dark:font-normal

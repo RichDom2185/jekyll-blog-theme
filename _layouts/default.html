@@ -2,6 +2,7 @@
 <html lang="{{ site.lang | default: "en-US" }}">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
     <meta charset="utf-8">
     <title>{{ page.title }} | {{ site.title }}</title>
     <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
@@ -11,8 +12,10 @@
   </head>
   <body>
     <div id="root">
-      {% include header.html %}
-      {{ content }}
+      <div class="BACKGROUND_DYNAMIC_COLOR">
+        {% include header.html %}
+        {{ content }}
+      </div>
     </div>
   </body>
 </html>
