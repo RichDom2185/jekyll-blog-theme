@@ -1,0 +1,11 @@
+.language-bash > .highlight::after {
+  content: "Bash";
+}
+
+.language-brainfuck > .highlight::after {
+  content: "Brainfuck";
+}
+
+.language-python > .highlight::after {
+  content: "Python";
+}
