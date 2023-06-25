@@ -15,7 +15,7 @@
     - h-[--header-height]
 
     - flex
-    - gap-x-6
+    - gap-x-4
     - items-center
 
     - py-4
@@ -85,6 +85,9 @@
 - selector: article *
   classes:
     - scroll-mt-[--header-height]
+- selector: article *:not(h1, h2, h3, h4, h5, h6)
+  classes:
+    - TEXT_NORMAL
 - selector: |
     article h1,
     article h2,
