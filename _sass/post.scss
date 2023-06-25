@@ -15,4 +15,13 @@ article {
   code {
     font-size: 0.9em;
   }
+
+  h1:hover::before,
+  h2:hover::before,
+  h3:hover::before {
+    content: "#";
+    color: var(--grey-outline);
+    position: absolute;
+    left: -1.5ch;
+  }
 }
