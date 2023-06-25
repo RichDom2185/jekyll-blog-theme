@@ -36,6 +36,10 @@
   classes:
     - font-serif
 
+- selector: .TEXT_DYNAMIC_SPACING
+  classes:
+    - tracking-normal
+    - dark:tracking-wide
 # The following are copied from
 # https://github.com/RichDom2185/2023-website/blob/master/src/utils/styles.ts
 - selector: .BACKGROUND_DYNAMIC_COLOR
