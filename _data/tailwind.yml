@@ -65,6 +65,17 @@
     - text-xl
     - lg:text-2xl
 
+# TODO: Investigate if needs changing
+- selector: article ol li
+  classes:
+    - list-decimal
+    - ml-5
+- selector: article ul li
+  classes:
+    - list-disc
+    - ml-5
+# END TODO
+
 - selector: .TEXT_DYNAMIC_SPACING
   classes:
     - tracking-normal
