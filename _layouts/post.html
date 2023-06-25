@@ -11,12 +11,14 @@ layout: default
   <h1 class="text-2xl md:text-3xl lg:text-4xl TEXT_BOLD !my-7">
     {{ page.title }}
   </h1>
-  <span>{{ page.date | date: "%A, %-d %B %Y" }}</span>
+  <span class="italic uppercase">{{ page.date | date: "%A, %-d %b %Y" }}</span>
   <div class="flex flex-wrap gap-2 items-center">
     <span>Author{% if page.authors.size > 1 %}s{% endif %}:</span>
     <ul class="post-author flex gap-2 flex-wrap">
       {% for author in page.authors %}
-      <li class="bg-gray-200 px-2 py-0.5 rounded-lg">
+      <li
+        class="bg-gray-100 dark:bg-gray-700 dark:text-stone-300 px-2 py-0.5 rounded-lg"
+      >
         <iconify-icon
           icon="emojione:bust-in-silhouette"
           inline="true"
@@ -26,8 +28,10 @@ layout: default
       {% endfor %}
     </ul>
   </div>
-  <hr />
-  <article class="space-y-4 leading-relaxed font-serif">{{ content }}</article>
+  <hr class="!my-4" />
+  <article class="space-y-4 leading-relaxed font-serif text-justify">
+    {{ content }}
+  </article>
 </div>
 {% if page.cover-img %}
 <style>

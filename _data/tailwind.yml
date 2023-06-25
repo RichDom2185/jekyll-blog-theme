@@ -54,6 +54,7 @@
     article h2,
     article h3
   classes:
+    - TEXT_MEDIUM
     - relative
     - cursor-pointer
     - hover:underline
@@ -61,7 +62,6 @@
     - decoration-dashed
 - selector: article h1
   classes:
-    - TEXT_MEDIUM
     - text-xl
     - lg:text-2xl
 
