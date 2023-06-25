@@ -36,6 +36,9 @@
     - -mt-[--header-height]
 
 # Blog styles
+- selector: article *
+  classes:
+    - scroll-mt-[--header-height]
 - selector: |
     article h1,
     article h2,
