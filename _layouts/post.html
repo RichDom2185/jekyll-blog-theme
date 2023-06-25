@@ -2,16 +2,16 @@
 layout: default
 ---
 
-<div class="page-section post">
+<div class="page-section post space-y-2">
   {% if page.cover-img %}
   <div class="post-header">
     {% include cover-img.html img=page.cover-img src=page %}
   </div>
   {% endif %}
-  <h1>{{ page.title }}</h1>
+  <h1 class="text-2xl md:text-3xl lg:text-4xl">{{ page.title }}</h1>
   <span>{{ page.date | date: "%A, %-d %B %Y" }}</span>
-  <div class="space-y-2">
-    <p>Author{% if page.authors.size > 1 %}s{% endif %}:</p>
+  <div class="flex flex-wrap gap-2 items-center">
+    <span>Author{% if page.authors.size > 1 %}s{% endif %}:</span>
     <ul class="post-author flex gap-2 flex-wrap">
       {% for author in page.authors %}
       <li class="bg-gray-200 px-2 py-0.5 rounded-lg">
