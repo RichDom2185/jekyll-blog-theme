@@ -32,7 +32,8 @@
     - items-center
 - selector: .site-header + *
   classes:
-    - -mt[--header-height]
+    - pt-[--header-height]
+    - -mt-[--header-height]
 
 # Blog styles
 - selector: |
