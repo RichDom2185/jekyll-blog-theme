@@ -49,6 +49,13 @@
 - selector: img.emoji
   classes:
     - inline
+- selector: blockquote
+  classes:
+    - space-y-4
+    - pl-4
+    - border-l-4
+    - border-dashed
+    - BORDER_DYNAMIC_COLOR
 
 # Table styles copied from
 # https://github.com/RichDom2185/glam-mailer/blob/master/src/themes/default.yaml#L96-L115
