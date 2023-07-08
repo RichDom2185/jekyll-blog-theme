@@ -6,6 +6,7 @@
       const response = await fetch(url);
       return response.json();
     };
+    // TODO: Use config value for API route
     getJSON("{{ 'api/posts/all' | relative_url }}").then((data) => {
       allPosts = data;
       onAutocomplete();
