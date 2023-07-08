@@ -1,0 +1,205 @@
+- selector: .site-header
+  classes:
+    - BACKGROUND_DYNAMIC_COLOR
+    - TEXT_DYNAMIC_COLOR
+
+    - bg-opacity-70
+    - dark:bg-opacity-50
+
+    - backdrop-blur
+
+    - sticky
+    - top-0
+    - z-50
+    - w-full
+    - h-[--header-height]
+
+    - flex
+    - gap-x-4
+    - items-center
+
+    - py-4
+    - px-5
+    - text-sm
+    - font-display
+    - justify-between
+
+    - TEXT_MEDIUM
+- selector: .site-header > *
+  classes:
+    - flex
+    - gap-x-4
+    - items-center
+- selector: .site-header + *
+  classes:
+    - pt-[--header-height]
+    - -mt-[--header-height]
+
+# Global styles
+- selector: .admonition
+  classes:
+    - shadow
+- selector: :not(pre) > code
+  classes:
+    - rounded
+    - px-1
+    - py-0.5
+    - font-mono
+    - bg-gray-100
+    - dark:bg-gray-800
+    - border
+    - BORDER_DYNAMIC_COLOR
+- selector: img.emoji
+  classes:
+    - inline
+- selector: blockquote
+  classes:
+    - space-y-4
+    - pl-4
+    - border-l-4
+    - border-dashed
+    - BORDER_DYNAMIC_COLOR
+
+# Table styles adapted to be dynamic from
+# https://github.com/RichDom2185/glam-mailer/blob/master/src/themes/default.yaml#L96-L115
+- selector: table
+  classes:
+    - table-auto
+    - w-full
+    - border-collapse
+    - rounded-md
+    - overflow-hidden
+    - font-sans
+- selector: thead
+  classes:
+    - bg-gray-100
+    - dark:bg-gray-800
+- selector: tbody > tr
+  classes:
+    - odd:bg-white
+    - dark:odd:bg-gray-800
+    - even:bg-gray-50
+    - dark:even:bg-gray-900
+- selector: th,td
+  classes:
+    - border
+    - BORDER_DYNAMIC_COLOR
+    - border-solid
+    - px-4
+    - py-2
+
+# Blog styles
+- selector: article *
+  classes:
+    - scroll-mt-[--header-height]
+- selector: article *:not(h1, h2, h3, h4, h5, h6)
+  classes:
+    - TEXT_NORMAL
+- selector: |
+    article h1,
+    article h2,
+    article h3,
+    article h4,
+    article h5,
+    article h6
+  classes:
+    - font-sans
+    - text-left
+- selector: |
+    article h1,
+    article h2,
+    article h3
+  classes:
+    - TEXT_MEDIUM
+    - relative
+    - cursor-pointer
+    - hover:underline
+    - underline-offset-8
+    - decoration-dashed
+- selector: |
+    article h4,
+    article h5,
+    article h6
+  classes:
+    - TEXT_BOLD
+- selector: article h1
+  classes:
+    - text-xl
+    - lg:text-2xl
+- selector: article h2
+  classes:
+    - text-lg
+    - lg:text-xl
+- selector: article h3
+  classes:
+    - text-lg
+- selector: article a
+  classes:
+    - hover:underline
+    - hover:decoration-dashed
+    - underline-offset-4
+    - LINK_DYNAMIC_NO_HOVER
+- selector: article img:not(.emoji)
+  classes:
+    - rounded
+    - mx-auto
+    - shadow-lg
+    - border
+    - BORDER_DYNAMIC_COLOR
+    - min-w-[30%]
+    - max-h-[60vh]
+    - object-contain
+
+# TODO: Investigate if needs changing
+- selector: article ol li
+  classes:
+    - list-decimal
+    - ml-5
+- selector: article ul li
+  classes:
+    - list-disc
+    - ml-5
+# END TODO
+
+- selector: .TEXT_DYNAMIC_SPACING
+  classes:
+    - tracking-normal
+    - dark:tracking-wide
+- selector: .BORDER_DYNAMIC_COLOR
+  classes:
+    - border-gray-300
+    - dark:border-gray-700
+- selector: .LINK_DYNAMIC_HOVER
+  classes:
+    - hover:text-blue-600
+    - dark:hover:text-blue-300
+- selector: .LINK_DYNAMIC_NO_HOVER
+  classes:
+    - text-blue-600
+    - dark:text-blue-300
+
+# The following are adapted from
+# https://github.com/RichDom2185/2023-website/blob/master/src/utils/styles.ts
+- selector: .BACKGROUND_DYNAMIC_COLOR
+  classes:
+    - bg-white
+    - dark:bg-zinc-900
+- selector: .TEXT_DYNAMIC_COLOR
+  classes:
+    - text-zinc-900
+    - dark:text-stone-300
+- selector: .TEXT_STATIC_BLACK
+  classes:
+    - text-zinc-900
+- selector: .TEXT_BOLD
+  classes:
+    - font-bold
+    - dark:font-semibold
+- selector: .TEXT_NORMAL
+  classes:
+    - font-normal
+    - dark:font-light
+- selector: .TEXT_MEDIUM
+  classes:
+    - font-medium
+    - dark:font-normal

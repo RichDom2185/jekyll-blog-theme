@@ -1,14 +1,49 @@
 <!-- taken from React component in main site -->
-<header class="header">
-  <div class="header-left">
-    <img class="favicon" src="/favicon.ico" alt="Favicon" />
-    <a href="/">
-      <h1>{{ site.author }}</h1>
+<header class="site-header">
+  <div>
+    <!-- TODO: <img class="favicon" src="/favicon.ico" alt="Favicon" /> -->
+    <a
+      href="{{ site.baseurl }}/"
+      class="site-root-link text-xl md:text-xl hover:text-bold dark:text-stone-300 dark:hover:text-stone-300 select-none inline-block font-normal hover:font-black transition-[color,font-weight]"
+    >
+      {{ site.title }}
     </a>
   </div>
   <ul class="header-right">
+    {% if site.enable_features.search %}
     <li>
-      <a href="/blog">Blog</a>
+      <div class="relative">
+        <a
+          href="javascript:toggleSearchOverlayVisibility();"
+          class="search hover:underline underline-offset-4"
+        >
+          Search
+          <iconify-icon
+            icon="heroicons-outline:search"
+            inline="true"
+          ></iconify-icon>
+        </a>
+        <div
+          class="search-overlay hidden w-80 h-max mt-7 space-y-4 absolute top-0 right-0 select-none TEXT_DYNAMIC_COLOR normal-case leading-none"
+        >
+          <div
+            class="space-y-1 [&>*]:shadow [&>*]:border [&>*]:border-neutral-300 [&>*]:dark:border-stone-700 [&>*]:rounded-lg"
+          >
+            <input
+              type="text"
+              placeholder="Search by title..."
+              class="search-field p-2 w-full focus:outline-1 focus:outline-neutral-300 dark:focus:outline-stone-500"
+              oninput="onAutocomplete()"
+            />
+            <ul
+              class="search-results divide-neutral-300 dark:divide-stone-700 bg-white dark:bg-zinc-800 py-1 space-y-0.5 overflow-clip [&>li]:search-result [&>li]:px-3 [&>li]:py-2 [&>li]:cursor-pointer"
+            >
+              <!-- Dynamically injected content -->
+            </ul>
+          </div>
+        </div>
+      </div>
     </li>
+    {% endif %}
   </ul>
 </header>

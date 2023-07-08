@@ -1,0 +1,26 @@
+.highlight::after {
+  text-align: right;
+  font-size: 0.8em;
+  color: var(--grey-outline);
+  display: block;
+  margin-top: -1em;
+  padding: 0 1em 0.5em;
+  // FIXME: Ensure this is in sync with Tailwind.
+  //        Hardcoded due to pseudo-element unable
+  //        to be targetted.
+  font-family: Figtree, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
+}
+
+.language-bash > .highlight::after {
+  content: "Bash";
+}
+
+.language-brainfuck > .highlight::after {
+  content: "Brainfuck";
+}
+
+.language-python > .highlight::after {
+  content: "Python";
+}

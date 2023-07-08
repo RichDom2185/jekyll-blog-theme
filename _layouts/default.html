@@ -1,18 +1,36 @@
+{% if site.enable_features.admonitions %}{% capture content %}{% include admonitions.liquid html=content %}{% endcapture %}{% endif %}
+{% if site.enable_features.fancy-tables %}{% capture content %}{% include fancy-tables.liquid html=content %}{% endcapture %}{% endif %}
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
     <meta charset="utf-8">
     <title>{{ page.title }} | {{ site.title }}</title>
     <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
     {% include fonts.html %}
     {% include css.html %}
     {% include tailwind.html %}
+    {% if site.enable_features.search %}{% include search.html %}{% endif %}
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+    <script>
+      document.addEventListener("scroll", () => {
+        const classes = document.querySelector(".site-header").classList;
+        if (window.scrollY > 0) {
+          classes.add("shadow");
+        } else {
+          classes.remove("shadow");
+        }
+      });
+    </script>
   </head>
   <body>
     <div id="root">
-      {% include header.html %}
-      {{ content }}
+      <div class="BACKGROUND_DYNAMIC_COLOR TEXT_DYNAMIC_COLOR TEXT_DYNAMIC_SPACING font-sans">
+        {% include header.html %}
+        {{ content }}
+      </div>
+      {% include footer.html %}
     </div>
   </body>
 </html>

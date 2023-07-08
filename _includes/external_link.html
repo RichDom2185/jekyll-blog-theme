@@ -1,0 +1,15 @@
+<!-- Effectively copied from 
+  https://github.com/RichDom2185/2023-website/blob/master/src/components/common/ExternalLink.tsx
+-->
+<a
+  class="LINK_DYNAMIC_HOVER"
+  target="_blank"
+  rel="noopener noreferrer"
+  href="{{ include.to }}"
+>
+  <span
+    class="underline decoration-dotted hover:decoration-solid underline-offset-4"
+  >
+    {{- include.label -}}
+  </span>
+</a>
