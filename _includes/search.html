@@ -1,0 +1,66 @@
+<script>
+  const { onAutocomplete, toggleSearchOverlayVisibility } = (() => {
+    let allPosts = [];
+    const getJSON = async (url) => {
+      // Assumed same origin so CORS is not an issue
+      const response = await fetch(url);
+      return response.json();
+    };
+    getJSON("{{ 'api/posts/all' | relative_url }}").then((data) => {
+      allPosts = data;
+      onAutocomplete();
+    });
+
+    const toggleSearchOverlayVisibility = () => {
+      const searchOverlay = document.querySelector(".search-overlay");
+      searchOverlay.classList.toggle("hidden");
+      if (!searchOverlay.classList.contains("hidden")) {
+        document.querySelector(".search-field").focus();
+      }
+    };
+
+    function onAutocomplete() {
+      const searchField = document.querySelector(".search-field");
+      const resultsUl = document.querySelector(".search-results");
+      const query = searchField.value.toLowerCase();
+      const childrenToShow = allPosts
+        .filter(({ title }) => title.toLowerCase().includes(query))
+        .map(({ title, path }) => {
+          const li = document.createElement("li");
+          li.onclick = () => {
+            window.location.href = path;
+          };
+          li.classList.add(
+            "group",
+            // HOVER_DYNAMIC_BACKGROUND
+            "hover:bg-black/5",
+            "dark:hover:bg-white/5"
+          );
+          li.innerHTML = `
+          <a href="${path}" class="group-hover:font-semibold">
+            <span>${title}</span>
+          </a>
+        `;
+          return li;
+        });
+      // TODO: Investigate if we want to set a minimum query length
+      if (false && query.length < 1) {
+        const placeholderNode = document.createElement("li");
+        placeholderNode.classList.add("text-center");
+        placeholderNode.appendChild(document.createTextNode("Start typing..."));
+        resultsUl.replaceChildren(placeholderNode);
+      } else if (childrenToShow.length) {
+        resultsUl.replaceChildren(...childrenToShow);
+      } else {
+        const noChildrenToShow = document.createElement("li");
+        noChildrenToShow.classList.add("text-center");
+        noChildrenToShow.appendChild(
+          document.createTextNode("No results found.")
+        );
+        resultsUl.replaceChildren(noChildrenToShow);
+      }
+    }
+
+    return { onAutocomplete, toggleSearchOverlayVisibility };
+  })();
+</script>
