@@ -3,14 +3,10 @@
 
 // Admonition types: note, tip, info, warning, danger
 .admonition {
-  border: 0 solid black;
-  border-left-width: 4px;
+  border-bottom-width: 2px;
   background-color: #eee;
   border-radius: 6px;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  padding: 1em;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+  padding: 0.625rem 0.75rem;
 
   > *:last-child {
     margin-bottom: 0;
@@ -20,86 +16,138 @@
     break-inside: avoid-page;
   }
 
-  // Border colors from https://www.schemecolor.com/pastel-rainbow.php
-  // Other colors from https://docusaurus.io/docs/markdown-features/admonitions
-
   &.admonition-type-note {
-    border-color: gray;
-    background-color: #f8f8f9;
+    border-color: #737373;
+    background-color: #f3f3f3;
+
+    @media (prefers-color-scheme: dark) {
+      border-color: gray;
+      background-color: #52525280; // neutral-600/50
+    }
   }
 
   &.admonition-type-tip {
-    border-color: #9ee09e;
-    background-color: #e6f5e6;
+    border-color: #11b811;
+    background-color: #e2f3e2;
+
+    @media (prefers-color-scheme: dark) {
+      border-color: #13dd13;
+      background-color: #14532d80; // green-900/50
+    }
   }
 
   &.admonition-type-info {
-    border-color: #9ec1cf;
+    border-color: #0693ca;
     background-color: #eef9fc;
+
+    @media (prefers-color-scheme: dark) {
+      border-color: #07aff1;
+      background-color: #0c4a6e80; // sky-900/50
+    }
   }
 
   &.admonition-type-warning {
-    border-color: #feb144;
-    background-color: #fff8e6;
+    border-color: #cd6005;
+    background-color: #ffedd5c0; // orange-100/75
+
+    @media (prefers-color-scheme: dark) {
+      border-color: #ff7701;
+      background-color: #6a3103;
+    }
   }
 
   &.admonition-type-danger {
-    border-color: #ff6663;
+    border-color: #b60738;
     background-color: #ffebec;
+
+    @media (prefers-color-scheme: dark) {
+      border-color: #e40246;
+      background-color: #6e0523;
+    }
   }
 }
 
 .admonition-title {
-  font-weight: bold;
+  // FIXME: This is a hack to override Tailwind parent styles.
+  font-weight: bold !important;
   margin-bottom: 10px;
+  color: var(--admonition-title-color);
 
   .admonition-type-note & {
-    color: #474748;
+    --admonition-title-color: #474747;
+
+    @media (prefers-color-scheme: dark) {
+      --admonition-title-color: #a3a3a3; // neutral-400
+    }
   }
 
   .admonition-type-tip & {
-    color: #013100;
+    --admonition-title-color: #052e16; // green-950
+
+    @media (prefers-color-scheme: dark) {
+      --admonition-title-color: #22c55e; // green-500
+    }
   }
 
   .admonition-type-info & {
-    color: #193c47;
+    --admonition-title-color: #082f49; // sky-950
+
+    @media (prefers-color-scheme: dark) {
+      --admonition-title-color: #0ea5e9; // sky-500
+    }
   }
 
   .admonition-type-warning & {
-    color: #4d3800;
+    --admonition-title-color: #4d3800;
+
+    @media (prefers-color-scheme: dark) {
+      // --admonition-title-color: #f7b500;
+      --admonition-title-color: #fdba74; // orange-300
+    }
   }
 
   .admonition-type-danger & {
-    color: #4b1013;
+    --admonition-title-color: #450a0a; // red-950
+
+    @media (prefers-color-scheme: dark) {
+      --admonition-title-color: #f87171; // red-400
+    }
   }
 }
 
 .admonition-title::before {
-  // Guide from https://fontawesome.com/v6/docs/web/add-icons/pseudo-elements
+  // Adapted from https://iconify.design/docs/usage/css/
   display: inline-block;
-  text-rendering: auto;
-  font-family: "Font Awesome 6 Free";
-  font-weight: 900; // Solid icons
-  -webkit-font-smoothing: antialiased;
   margin-right: 6px;
 
+  content: "";
+  background-color: var(--admonition-title-color);
+  -webkit-mask: var(--svg) no-repeat 50% 50%;
+  mask: var(--svg) no-repeat 50% 50%;
+  width: 1em;
+  height: 1em;
+
+  // Inline icon. https://iconify.design/docs/icon-components/react/inline.html
+  vertical-align: -0.125em;
+
   .admonition-type-note & {
-    content: "\f02d"; // book
+    --svg: url(https://api.iconify.design/heroicons/bookmark-20-solid.svg);
   }
 
   .admonition-type-tip & {
-    content: "\f0eb"; // lightbulb
+    --svg: url(https://api.iconify.design/heroicons/light-bulb-20-solid.svg);
   }
 
   .admonition-type-info & {
-    content: "\f05a"; // circle-info
+    --svg: url(https://api.iconify.design/heroicons/document-text-solid.svg);
+    // --svg: url(https://api.iconify.design/heroicons/information-circle-20-solid.svg);
   }
 
   .admonition-type-warning & {
-    content: "\f071"; // triangle-exclamation
+    --svg: url(https://api.iconify.design/heroicons/exclamation-triangle-solid.svg);
   }
 
   .admonition-type-danger & {
-    content: "\f7e4"; // fire-flame-curved
+    --svg: url(https://api.iconify.design/heroicons/fire-20-solid.svg);
   }
 }

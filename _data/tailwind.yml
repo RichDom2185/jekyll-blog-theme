@@ -36,6 +36,9 @@
     - -mt-[--header-height]
 
 # Global styles
+- selector: .admonition
+  classes:
+    - shadow
 - selector: :not(pre) > code
   classes:
     - rounded
